@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.InMemory;
 
 namespace CatalogueApp
 {
@@ -24,6 +26,9 @@ namespace CatalogueApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<CatalogueDbRepository>(options => {
+                options.UseInMemoryDatabase("Db_Cat");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

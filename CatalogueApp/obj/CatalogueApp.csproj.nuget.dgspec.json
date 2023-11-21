@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alida\\EnsetDN\\CatalogueApp\\CatalogueApp.csproj": {}
+    "C:\\Users\\alida\\Documents\\GitHub\\code_api\\CatalogueApp\\CatalogueApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alida\\EnsetDN\\CatalogueApp\\CatalogueApp.csproj": {
+    "C:\\Users\\alida\\Documents\\GitHub\\code_api\\CatalogueApp\\CatalogueApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alida\\EnsetDN\\CatalogueApp\\CatalogueApp.csproj",
+        "projectUniqueName": "C:\\Users\\alida\\Documents\\GitHub\\code_api\\CatalogueApp\\CatalogueApp.csproj",
         "projectName": "CatalogueApp",
-        "projectPath": "C:\\Users\\alida\\EnsetDN\\CatalogueApp\\CatalogueApp.csproj",
+        "projectPath": "C:\\Users\\alida\\Documents\\GitHub\\code_api\\CatalogueApp\\CatalogueApp.csproj",
         "packagesPath": "C:\\Users\\alida\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alida\\EnsetDN\\CatalogueApp\\obj\\",
+        "outputPath": "C:\\Users\\alida\\Documents\\GitHub\\code_api\\CatalogueApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alida\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -35,6 +35,16 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
