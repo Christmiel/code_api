@@ -1,0 +1,12 @@
+
+
+@model System.Collections.Generic.IList<string>;
+
+<h3> Index View Email @ViewData["email"]</h3>
+<h4>Contact : @ViewBag.contact</h4>
+<ul class="list-group">
+    @foreach(var item in Model)
+    {
+        <li class="list-group-item" >@item</li>
+    }
+</ul>

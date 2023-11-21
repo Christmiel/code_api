@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\alida\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\alida\\.nuget\\packages"
+    ]
+  }
+}
