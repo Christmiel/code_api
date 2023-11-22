@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.InMemory;
+using CatalogueApp.Services;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 
 namespace CatalogueApp
 {
@@ -28,11 +30,15 @@ namespace CatalogueApp
             services.AddControllersWithViews();
             services.AddDbContext<CatalogueDbRepository>(options => {
                 options.UseInMemoryDatabase("Db_Cat");
+
+           services.AddControllersWithViews().AddNewtonsoftJson(options =>
+     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+              
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,  CatalogueDbRepository catalogDb)
         {
             if (env.IsDevelopment())
             {
@@ -57,6 +63,7 @@ namespace CatalogueApp
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            DbInit.InitData(catalogDb);
         }
     }
 }
